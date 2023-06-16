@@ -19,6 +19,11 @@ TEST(adderTest, worksWithBasicNumbers) {
     EXPECT_EQ(adder(4444, 5555), 9999);
 }
 
+TEST(adderTest, isCommutative) {
+    EXPECT_EQ(adder(123, 321), adder(321, 123));
+    EXPECT_EQ(adder(921, 55555), adder(55555, 921));
+}
+
 TEST(adderTest, overflowsCorrectly) {
     EXPECT_EQ(adder(4294967295, 1), 0);
     EXPECT_EQ(adder(4294967295, 5), 4);
