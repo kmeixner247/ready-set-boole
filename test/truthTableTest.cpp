@@ -2,7 +2,7 @@
 #include "../rsb.hpp"
 
 TEST(truthTableTest, exists) {
-    std::string formula("");
+    std::string formula;
     EXPECT_NO_THROW(print_truth_table(formula));
 }
 

@@ -44,8 +44,9 @@ void print_truth_table(std::string &str) {
     auto it = hashMap.rbegin();
     while (true) {
         print_map(hashMap, str);
-        while (it->second)
+        while (it->second) {
             it++;
+        }
         if (it == hashMap.rend())
             break;
         it->second = true;
