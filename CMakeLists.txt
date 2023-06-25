@@ -13,7 +13,7 @@ set(Headers
 )
 set(Sources
     src/adder.cpp
-        src/multiplier.cpp src/grayCode.cpp src/evalFormula.cpp src/truthTable.cpp)
+        src/multiplier.cpp src/grayCode.cpp src/evalFormula.cpp src/truthTable.cpp src/negationNormalForm.cpp)
 
 add_library(rsb STATIC ${Sources} ${Headers})
 

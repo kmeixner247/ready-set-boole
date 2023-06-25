@@ -34,8 +34,6 @@ void print_truth_table(std::string &str) {
             case 'A' ... 'Z':
                 hashMap[symbol] = false;
                 break ;
-            default:
-                std::cout << "no more" << std::endl;
         }
     }
     if (hashMap.empty())

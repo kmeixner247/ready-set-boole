@@ -6,15 +6,15 @@
 void handle_operator(std::stack<bool> &truthStack, const char op) {
     if (truthStack.size() < 1)
         throw std::runtime_error("Invalid formula: Too many operators");
-    bool a = truthStack.top();
+    bool b = truthStack.top();
     truthStack.pop();
     if (op == '!') {
-        truthStack.push(!a);
+        truthStack.push(!b);
         return;
     }
     if (truthStack.size() < 1)
         throw std::runtime_error("Invalid formula: Too many operators");
-    bool b = truthStack.top();
+    bool a = truthStack.top();
     truthStack.pop();
     switch (op) {
         case '&':
@@ -27,7 +27,7 @@ void handle_operator(std::stack<bool> &truthStack, const char op) {
             truthStack.push(a ^ b);
             break;
         case '>':
-            truthStack.push(!(a && !b));
+            truthStack.push(!a | b);
             break;
         case '=':
             truthStack.push(a == b);
