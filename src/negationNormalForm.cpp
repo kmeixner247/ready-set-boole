@@ -61,12 +61,10 @@ std::string negation_normal_form(std::string const &formula) {
                 stack.pop_back();
                 operand1 = stack.back();
                 stack.pop_back();
-                temp += operand1 + operand2 + "&";
-//                stack.push_back(operand1 + operand2 + "&");
+                temp = operand1 + operand2 + "&";
                 operand1 += "!";
                 operand2 += "!";
                 temp += negation_normal_form(operand1) + negation_normal_form(operand2) + "&|";
-//                stack.push_back(negation_normal_form(operand1) + negation_normal_form(operand2) + "&|");
                 stack.push_back(temp);
                 break;
             default:
@@ -75,7 +73,6 @@ std::string negation_normal_form(std::string const &formula) {
                 stack.push_back(s);
         }
     }
-
     for (auto const &s : stack) {
         newFormula += s;
     }

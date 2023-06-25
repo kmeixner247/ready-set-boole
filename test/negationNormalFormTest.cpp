@@ -36,5 +36,5 @@ TEST(negationNormalFormTest, transformsEquivalence) {
 }
 
 TEST(negationNormalFormTest, complexFormula) {
-    EXPECT_EQ(negation_normal_form("AB|!C&!D!!E|!!!=F>"), "A!B!&C&DE||AB|C!|D!E!&|&F|")
+    EXPECT_EQ(negation_normal_form("AB|!C&!D!!E|!!!=F>"), "A!B!&C&DE||AB|C!|D!E!&|&F|");
 }
