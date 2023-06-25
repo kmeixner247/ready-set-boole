@@ -12,8 +12,8 @@ set(Headers
     rsb.hpp
 )
 set(Sources
-    adder.cpp
-        multiplier.cpp)
+    src/adder.cpp
+        src/multiplier.cpp src/grayCode.cpp src/evalFormula.cpp src/truthTable.cpp)
 
 add_library(rsb STATIC ${Sources} ${Headers})
 

@@ -1,8 +1,6 @@
     #include <gtest/gtest.h>
 #include "../rsb.hpp"
 
-
-
 TEST(multiplierTest, worksWithZeros) {
     EXPECT_EQ(multiplier(0, 0), 0 * 0);
     EXPECT_EQ(multiplier(0, 1), 0 * 1);
@@ -38,3 +36,21 @@ TEST(multiplierTest, overflowsCorrectly) {
     result = 2147483648 * 3;
     EXPECT_EQ(multiplier(2147483648, 3), result);
 }
+
+    TEST(multiplierTest, hasConstantTimeComplexity) {
+        auto startTime = std::chrono::high_resolution_clock::now();
+        uint32_t a = 4294967295;
+        uint32_t b = 4294967295;
+        for (size_t i = 0; i < 100000; i++) {
+            multiplier(a, b);
+        }
+        auto sampleTime = std::chrono::high_resolution_clock::now() - startTime;
+        for (size_t i = 1; i < 1000000000; i *= 10) {
+            startTime = std::chrono::high_resolution_clock::now();
+            for (size_t j = 0; j < 100000; j++) {
+                multiplier(i, i);
+            }
+            auto endTime = std::chrono::high_resolution_clock::now() - startTime;
+            EXPECT_LE(endTime.count(), sampleTime.count() * 2) << "Execution time for " << i << " exceeds twice that of MAX_UINT";
+        }
+    }

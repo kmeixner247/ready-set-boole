@@ -1,5 +1,5 @@
 #include <iostream>
-#include "rsb.hpp"
+#include "../rsb.hpp"
 
 uint32_t multiplier(uint32_t a, uint32_t b) {
     uint32_t result = 0;
