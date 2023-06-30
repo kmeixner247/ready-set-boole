@@ -8,4 +8,7 @@ void print_truth_table(std::string &str);
 std::string negation_normal_form(std::string const &formula);
 std::string conjunctive_normal_form(std::string const &formula);
 bool sat(std::string const &formula);
+std::vector<std::vector<int> > powerset(std::vector<int> const &set);
+
+
 std::string get_truth_table(std::string str);

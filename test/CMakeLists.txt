@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.25)
 
 set(Sources
     adderTest.cpp
-        multiplierTest.cpp grayCodeTest.cpp evalFormulaTest.cpp truthTableTest.cpp negationNormalFormTest.cpp conjunctiveNormalFormTest.cpp isSatisfiableTest.cpp)
+        multiplierTest.cpp grayCodeTest.cpp evalFormulaTest.cpp truthTableTest.cpp negationNormalFormTest.cpp conjunctiveNormalFormTest.cpp isSatisfiableTest.cpp powerSetTest.cpp)
 
 add_executable(rsbTest ${Sources})
 
