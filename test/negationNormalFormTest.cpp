@@ -1,40 +1,46 @@
 #include <gtest/gtest.h>
 #include "../rsb.hpp"
 
+void testNNF(std::string formula) {
+    std::string s1 = get_truth_table(formula);
+    std::string s2 = get_truth_table(negation_normal_form(formula));
+    EXPECT_EQ(s1, s2);
+}
+
 TEST(negationNormalFormTest, exists) {
     EXPECT_NO_THROW(negation_normal_form(""));
 }
 
 TEST(negationNormalFormTest, simplifiesDoubleNegation) {
-    EXPECT_EQ(negation_normal_form("A!!"), "A");
-    EXPECT_EQ(negation_normal_form("A!!!"), "A!");
-    EXPECT_EQ(negation_normal_form("A!!!!"), "A");
-    EXPECT_EQ(negation_normal_form("A!!!!!"), "A!");
-    EXPECT_EQ(negation_normal_form("A!!!!!!!!!!!!!!!!!"), "A!");
-    EXPECT_EQ(negation_normal_form("A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"), "A");
-    EXPECT_EQ(negation_normal_form("A!!B!!|"), "AB|");
-    EXPECT_EQ(negation_normal_form("A!!!B!!!|C!!|"), "A!B!|C|");
+    testNNF("A!!");
+    testNNF("A!!!");
+    testNNF("A!!!!");
+    testNNF("A!!!!!");
+    testNNF("A!!!!!!!!!!!!!!!!!");
+    testNNF("A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    testNNF("A!!B!!|");
+    testNNF("A!!!B!!!|C!!|");
 }
 
 TEST(negationNormalFormTest, appliesDeMorganLaws) {
-    EXPECT_EQ(negation_normal_form("AB|!"), "A!B!&");
-    EXPECT_EQ(negation_normal_form("AB&!"), "A!B!|");
-    EXPECT_EQ(negation_normal_form("ABC||!"), "A!B!C!&&");
-    EXPECT_EQ(negation_normal_form("ABC&&!"), "A!B!C!||");
-    EXPECT_EQ(negation_normal_form("ABCD|||!"), "A!B!C!D!&&&");
-    EXPECT_EQ(negation_normal_form("ABCD&&&!"), "A!B!C!D!|||");
-    EXPECT_EQ(negation_normal_form("AB|C&!"), "A!B!&C!|");
-    EXPECT_EQ(negation_normal_form("AB&C|!"), "A!B!|C!&");
+    testNNF("AB|!");
+    testNNF("AB&!");
+    testNNF("ABC||!");
+    testNNF("ABC&&!");
+    testNNF("ABCD|||!");
+    testNNF("ABCD&&&!");
+    testNNF("AB|C&!");
+    testNNF("AB&C|!");
 }
 
 TEST(negationNormalFormTest, transformsMaterialCondition) {
-    EXPECT_EQ(negation_normal_form("AB>"), "A!B|");
+    testNNF("AB>");
 }
 
 TEST(negationNormalFormTest, transformsEquivalence) {
-    EXPECT_EQ(negation_normal_form("AB="), "AB&A!B!&|");
+    testNNF("AB=");
 }
 
 TEST(negationNormalFormTest, complexFormula) {
-    EXPECT_EQ(negation_normal_form("AB|!C&!D!!E|!!!=F>"), "A!B!&C&DE||AB|C!|D!E!&|&F|");
+    testNNF("AB|!C&!D!!E|!!!=F>");
 }

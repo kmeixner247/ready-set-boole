@@ -4,7 +4,7 @@
 #include <algorithm>
 #include "../rsb.hpp"
 
-void print_header(std::map<char, bool> &hashMap) {
+void print_header(std::map<char, bool> &hashMap, std::string &result) {
     std::string line = "|";
     std::string line2 = "|---";
     for (auto el : hashMap) {
@@ -13,21 +13,21 @@ void print_header(std::map<char, bool> &hashMap) {
         line += " |";
         line2 += "|---";
     }
-    std::cout << line << " = |" << std::endl;
-    std::cout << line2 << "|" << std::endl;
+    result += line + " = |\n";
+    result += line2 + "|\n";
 }
 
-void print_map(std::map<char, bool> &hashMap, std::string formula) {
-    std::cout << "|";
+void print_map(std::map<char, bool> &hashMap, std::string formula, std::string &result) {
+    result += "|";
     for (auto el : hashMap) {
-        std::cout << " " << el.second << " |";
+        result += " " + std::to_string(el.second) + " |";
         const char test = el.second + 48;
         std::replace(formula.begin(), formula.end(), el.first, test);
     }
-    std::cout << " " << eval_formula(formula) << " |" << std::endl;
+    result += " " + std::to_string(eval_formula(formula)) + " |\n";
 }
 
-void print_truth_table(std::string &str) {
+std::string get_truth_table(std::string str) {
     std::map<char, bool> hashMap;
     for (auto symbol : str) {
         switch (symbol) {
@@ -37,11 +37,12 @@ void print_truth_table(std::string &str) {
         }
     }
     if (hashMap.empty())
-        return;
-    print_header(hashMap);
+        return "";
+    std::string result;
+    print_header(hashMap, result);
     std::map<char, bool>::reverse_iterator it = hashMap.rbegin();
     while (true) {
-        print_map(hashMap, str);
+        print_map(hashMap, str, result);
         while (it->second && it != hashMap.rend()) {
             it++;
         }
@@ -53,4 +54,5 @@ void print_truth_table(std::string &str) {
             it->second = false;
         }
     }
+    return result;
 }
