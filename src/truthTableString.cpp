@@ -40,7 +40,7 @@ std::string get_truth_table(std::string str) {
         return "";
     std::string result;
     print_header(hashMap, result);
-    std::map<char, bool>::reverse_iterator it = hashMap.rbegin();
+    auto it = hashMap.rbegin();
     while (true) {
         print_map(hashMap, str, result);
         while (it->second && it != hashMap.rend()) {

@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 #include <vector>
 #include "../rsb.hpp"
@@ -22,39 +21,28 @@ String conjunctive_normal_form(String const &formula) {
     char op1 = operand1.back();
     char op2 = operand2.back();
     char op3 = formula.back();
-    if (op1 == op2 && op2 == op3) {
+    if (op1 == op2 && op2 == op3)
         newFormula = associativity(operand1, operand2, op3);
-    }
-    else if (!isAndOrOr(op1) && op2 == '&' && op3 == '|') {
+    else if (!isAndOrOr(op1) && op2 == '&' && op3 == '|')
         newFormula = distributivity(operand1, operand2, op3);
-    }
-    else if(op1 == '&' && !isAndOrOr(op2) && op3 == '&') {
+    else if(op1 == '&' && !isAndOrOr(op2) && op3 == '&')
         newFormula = commutativity(operand1, operand2, op3);
-    }
-    else if(op1 == '&' && !isAndOrOr(op2) && op3 == '|') {
+    else if(op1 == '&' && !isAndOrOr(op2) && op3 == '|')
         newFormula = distributivity(operand1, operand2, op3);
-    }
-    else if(op1 == '&' && op2 == '&' && op3 == '|') {
+    else if(op1 == '&' && op2 == '&' && op3 == '|')
         newFormula = factorise(operand1, operand2, op3);
-    }
-    else if(op1 == '&' && op2 == '|' && op3 == '&') {
+    else if(op1 == '&' && op2 == '|' && op3 == '&')
         newFormula = commutativity(operand1, operand2, op3);
-    }
-    else if(op1 == '&' && op2 == '|' && op3 == '|') {
+    else if(op1 == '&' && op2 == '|' && op3 == '|')
         newFormula = distributivity(operand1, operand2, op3);
-    }
-    else if(op1 == '|' && !isAndOrOr(op2) && op3 == '&') {
+    else if(op1 == '|' && !isAndOrOr(op2) && op3 == '&')
         newFormula = commutativity(operand1, operand2, op3);
-    }
-    else if(op1 == '|' && !isAndOrOr(op2) && op3 == '|') {
+    else if(op1 == '|' && !isAndOrOr(op2) && op3 == '|')
         newFormula = commutativity(operand1, operand2, op3);
-    }
-    else if(op1 == '|' && op2 == '&' && op3 == '|') {
+    else if(op1 == '|' && op2 == '&' && op3 == '|')
         newFormula = distributivity(operand1, operand2, op3);
-    }
-    else if(op1 == '|' && op2 == '|' && op3 == '|') {
+    else if(op1 == '|' && op2 == '|' && op3 == '|')
         newFormula = associativity(operand1, operand2, op3);
-    }
     return newFormula;
 }
 
@@ -88,7 +76,7 @@ StringVector extractOperands(String const &formula) {
 
 bool isAndOrOr(char const &c) {
     String operators("&|");
-    if (operators.find(c) == operators.npos)
+    if (operators.find(c) == std::string::npos)
         return false;
     else
         return true;
@@ -116,7 +104,7 @@ String associativity(String operand1, String operand2, char const &op) {
 String distributivity(String const &operand1, String const &operand2, char const &op) {
     StringVector innerOperands;
     String outerOperand;
-    if (isAndOrOr(operand1.back() && isAndOrOr(operand2.back())) ||
+    if (isAndOrOr(operand1.back()) && isAndOrOr(operand2.back()) ||
         !isAndOrOr(op) ||
         operand1.empty() || operand2.empty()) {
         return operand1 + operand2 + op;

@@ -7,5 +7,5 @@ bool eval_formula(std::string &formula);
 void print_truth_table(std::string &str);
 std::string negation_normal_form(std::string const &formula);
 std::string conjunctive_normal_form(std::string const &formula);
-
+bool sat(std::string const &formula);
 std::string get_truth_table(std::string str);
