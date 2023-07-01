@@ -3,34 +3,38 @@
 #include "../src/Set.hpp"
 #include <vector>
 
-typedef std::string String;
-typedef std::vector<int32_t> IntVector;
-typedef std::vector<IntVector> IntVectorVector;
-
-TEST(evalSetTest, exists) {
-    std::vector<std::vector<int32_t>> setSet;
-    std::vector<int32_t> set;
-    set.push_back(5);
-    setSet.push_back(set);
-    EXPECT_NO_THROW(eval_set("A", setSet));
+void testEvalSet(const String& formula, const IntVectorVector& sets, const IntVector& expectedSet) {
+    EXPECT_EQ(Set(eval_set(formula, sets)), Set(expectedSet));
 }
 
+TEST(evalSetTest, failsOnInvalidFormulas) {
+    IntVectorVector sets({{1, 2, 3}, {3, 4, 5}});
+    EXPECT_ANY_THROW(eval_set("", sets));
+    EXPECT_ANY_THROW(eval_set("AA", sets));
+    EXPECT_ANY_THROW(eval_set("A&", sets));
+    EXPECT_ANY_THROW(eval_set("A|", sets));
+    EXPECT_ANY_THROW(eval_set("!", sets));
+}
+TEST(evalSetTest, handlesNegation) {
+    testEvalSet("A!", {{0, 1, 2}}, {});
+}
 
-TEST(evalSetTest, temptest) {
-    IntVectorVector setSet;
-    IntVector set;
-    set.push_back(0);
-    set.push_back(1);
-    set.push_back(2);
-    IntVector set2;
-    set2.push_back(2);
-    set2.push_back(4);
-    set2.push_back(5);
-    IntVector set3;
-    set3.push_back(55);
-    setSet.push_back(set);
-    setSet.push_back(set2);
-    setSet.push_back(set3);
-    IntVector resultSet = eval_set("AB=", setSet);
-    std::cout << Set(resultSet) << std::endl;
+TEST(evalSetTest, handlesConjunction) {
+    testEvalSet("AB&", {{0, 1, 2}, {0, 3, 4}}, {0});
+}
+
+TEST(evalSetTest, handlesDisjunction) {
+    testEvalSet("AB|", {{0, 1, 2}, {3, 4, 5}}, {0, 1, 2, 3, 4, 5});
+}
+
+TEST(evalSetTest, handlesExclusiveDisjunction) {
+    testEvalSet("AB^", {{0, 1, 2}, {0, 3, 4}, {55}}, {0, 55});
+}
+
+TEST(evalSetTest, handlesMaterialCondition) {
+    testEvalSet("AB>", {{0, 1, 2}, {2, 4, 5}, {55}}, {4, 5, 55, 2});
+}
+
+TEST(evalSetTest, handlesEquivalence) {
+    testEvalSet("AB=", {{0, 1, 2}, {2, 4, 5}, {55}}, {55, 2});
 }

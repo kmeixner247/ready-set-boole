@@ -13,6 +13,7 @@ public:
     Set operator^(Set const &rhs) const;
     Set operator!() const;
     int32_t operator[](uint32_t const &i) const;
+    bool operator==(Set const &rhs) const;
     Set &operator=(Set const &rhs);
     uint32_t size() const;
     std::vector<int32_t> getSet() const;

@@ -78,6 +78,15 @@ Set &Set::operator=(const Set &rhs) {
     return *this;
 }
 
+bool Set::operator==(const Set &rhs) const {
+    if (size() != rhs.size())
+        return false;
+    for (auto element : _set)
+        if (std::find(rhs._set.begin(), rhs._set.end(), element) == rhs._set.end())
+            return false;
+    return true;
+}
+
 std::ostream &operator<<(std::ostream &o, Set const &s) {
     o << "{";
     for (uint32_t i = 0; i < s.size(); i++) {
