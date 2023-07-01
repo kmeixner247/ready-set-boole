@@ -401,6 +401,54 @@ negationNormalFormTest.cpp.s:
 	cd /Users/kmeixner/Documents/rsv/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/rsbTest.dir/build.make test/CMakeFiles/rsbTest.dir/negationNormalFormTest.cpp.s
 .PHONY : negationNormalFormTest.cpp.s
 
+powerSetTest.o: powerSetTest.cpp.o
+.PHONY : powerSetTest.o
+
+# target to build an object file
+powerSetTest.cpp.o:
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/rsbTest.dir/build.make test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.o
+.PHONY : powerSetTest.cpp.o
+
+powerSetTest.i: powerSetTest.cpp.i
+.PHONY : powerSetTest.i
+
+# target to preprocess a source file
+powerSetTest.cpp.i:
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/rsbTest.dir/build.make test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.i
+.PHONY : powerSetTest.cpp.i
+
+powerSetTest.s: powerSetTest.cpp.s
+.PHONY : powerSetTest.s
+
+# target to generate assembly for a file
+powerSetTest.cpp.s:
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/rsbTest.dir/build.make test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.s
+.PHONY : powerSetTest.cpp.s
+
+spaceFillingCurveTest.o: spaceFillingCurveTest.cpp.o
+.PHONY : spaceFillingCurveTest.o
+
+# target to build an object file
+spaceFillingCurveTest.cpp.o:
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/rsbTest.dir/build.make test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o
+.PHONY : spaceFillingCurveTest.cpp.o
+
+spaceFillingCurveTest.i: spaceFillingCurveTest.cpp.i
+.PHONY : spaceFillingCurveTest.i
+
+# target to preprocess a source file
+spaceFillingCurveTest.cpp.i:
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/rsbTest.dir/build.make test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.i
+.PHONY : spaceFillingCurveTest.cpp.i
+
+spaceFillingCurveTest.s: spaceFillingCurveTest.cpp.s
+.PHONY : spaceFillingCurveTest.s
+
+# target to generate assembly for a file
+spaceFillingCurveTest.cpp.s:
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/rsbTest.dir/build.make test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.s
+.PHONY : spaceFillingCurveTest.cpp.s
+
 truthTableTest.o: truthTableTest.cpp.o
 .PHONY : truthTableTest.o
 
@@ -466,6 +514,12 @@ help:
 	@echo "... negationNormalFormTest.o"
 	@echo "... negationNormalFormTest.i"
 	@echo "... negationNormalFormTest.s"
+	@echo "... powerSetTest.o"
+	@echo "... powerSetTest.i"
+	@echo "... powerSetTest.s"
+	@echo "... spaceFillingCurveTest.o"
+	@echo "... spaceFillingCurveTest.i"
+	@echo "... spaceFillingCurveTest.s"
 	@echo "... truthTableTest.o"
 	@echo "... truthTableTest.i"
 	@echo "... truthTableTest.s"

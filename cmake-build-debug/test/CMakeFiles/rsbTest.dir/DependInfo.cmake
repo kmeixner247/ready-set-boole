@@ -17,6 +17,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/kmeixner/Documents/rsv/test/isSatisfiableTest.cpp" "test/CMakeFiles/rsbTest.dir/isSatisfiableTest.cpp.o" "gcc" "test/CMakeFiles/rsbTest.dir/isSatisfiableTest.cpp.o.d"
   "/Users/kmeixner/Documents/rsv/test/multiplierTest.cpp" "test/CMakeFiles/rsbTest.dir/multiplierTest.cpp.o" "gcc" "test/CMakeFiles/rsbTest.dir/multiplierTest.cpp.o.d"
   "/Users/kmeixner/Documents/rsv/test/negationNormalFormTest.cpp" "test/CMakeFiles/rsbTest.dir/negationNormalFormTest.cpp.o" "gcc" "test/CMakeFiles/rsbTest.dir/negationNormalFormTest.cpp.o.d"
+  "/Users/kmeixner/Documents/rsv/test/powerSetTest.cpp" "test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.o" "gcc" "test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.o.d"
+  "/Users/kmeixner/Documents/rsv/test/spaceFillingCurveTest.cpp" "test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o" "gcc" "test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o.d"
   "/Users/kmeixner/Documents/rsv/test/truthTableTest.cpp" "test/CMakeFiles/rsbTest.dir/truthTableTest.cpp.o" "gcc" "test/CMakeFiles/rsbTest.dir/truthTableTest.cpp.o.d"
   )
 

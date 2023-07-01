@@ -209,6 +209,34 @@ test/CMakeFiles/rsbTest.dir/truthTableTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rsbTest.dir/truthTableTest.cpp.s"
 	cd /Users/kmeixner/Documents/rsv/cmake-build-debug/test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kmeixner/Documents/rsv/test/truthTableTest.cpp -o CMakeFiles/rsbTest.dir/truthTableTest.cpp.s
 
+test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.o: test/CMakeFiles/rsbTest.dir/flags.make
+test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.o: /Users/kmeixner/Documents/rsv/test/powerSetTest.cpp
+test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.o: test/CMakeFiles/rsbTest.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kmeixner/Documents/rsv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.o"
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug/test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.o -MF CMakeFiles/rsbTest.dir/powerSetTest.cpp.o.d -o CMakeFiles/rsbTest.dir/powerSetTest.cpp.o -c /Users/kmeixner/Documents/rsv/test/powerSetTest.cpp
+
+test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rsbTest.dir/powerSetTest.cpp.i"
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug/test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kmeixner/Documents/rsv/test/powerSetTest.cpp > CMakeFiles/rsbTest.dir/powerSetTest.cpp.i
+
+test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rsbTest.dir/powerSetTest.cpp.s"
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug/test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kmeixner/Documents/rsv/test/powerSetTest.cpp -o CMakeFiles/rsbTest.dir/powerSetTest.cpp.s
+
+test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o: test/CMakeFiles/rsbTest.dir/flags.make
+test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o: /Users/kmeixner/Documents/rsv/test/spaceFillingCurveTest.cpp
+test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o: test/CMakeFiles/rsbTest.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kmeixner/Documents/rsv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o"
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug/test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o -MF CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o.d -o CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o -c /Users/kmeixner/Documents/rsv/test/spaceFillingCurveTest.cpp
+
+test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.i"
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug/test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kmeixner/Documents/rsv/test/spaceFillingCurveTest.cpp > CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.i
+
+test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.s"
+	cd /Users/kmeixner/Documents/rsv/cmake-build-debug/test && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kmeixner/Documents/rsv/test/spaceFillingCurveTest.cpp -o CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.s
+
 # Object files for target rsbTest
 rsbTest_OBJECTS = \
 "CMakeFiles/rsbTest.dir/adderTest.cpp.o" \
@@ -220,7 +248,9 @@ rsbTest_OBJECTS = \
 "CMakeFiles/rsbTest.dir/isSatisfiableTest.cpp.o" \
 "CMakeFiles/rsbTest.dir/evalSetTest.cpp.o" \
 "CMakeFiles/rsbTest.dir/assertFormulaTest.cpp.o" \
-"CMakeFiles/rsbTest.dir/truthTableTest.cpp.o"
+"CMakeFiles/rsbTest.dir/truthTableTest.cpp.o" \
+"CMakeFiles/rsbTest.dir/powerSetTest.cpp.o" \
+"CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o"
 
 # External object files for target rsbTest
 rsbTest_EXTERNAL_OBJECTS =
@@ -235,12 +265,14 @@ test/rsbTest: test/CMakeFiles/rsbTest.dir/isSatisfiableTest.cpp.o
 test/rsbTest: test/CMakeFiles/rsbTest.dir/evalSetTest.cpp.o
 test/rsbTest: test/CMakeFiles/rsbTest.dir/assertFormulaTest.cpp.o
 test/rsbTest: test/CMakeFiles/rsbTest.dir/truthTableTest.cpp.o
+test/rsbTest: test/CMakeFiles/rsbTest.dir/powerSetTest.cpp.o
+test/rsbTest: test/CMakeFiles/rsbTest.dir/spaceFillingCurveTest.cpp.o
 test/rsbTest: test/CMakeFiles/rsbTest.dir/build.make
 test/rsbTest: lib/libgtest_main.a
 test/rsbTest: librsb.a
 test/rsbTest: lib/libgtest.a
 test/rsbTest: test/CMakeFiles/rsbTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kmeixner/Documents/rsv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable rsbTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kmeixner/Documents/rsv/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable rsbTest"
 	cd /Users/kmeixner/Documents/rsv/cmake-build-debug/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rsbTest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

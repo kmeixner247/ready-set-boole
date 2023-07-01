@@ -91,7 +91,9 @@
 				6,
 				7,
 				8,
-				9
+				9,
+				10,
+				11
 			]
 		}
 	],
@@ -163,7 +165,9 @@
 				6,
 				7,
 				8,
-				9
+				9,
+				10,
+				11
 			]
 		}
 	],
@@ -227,6 +231,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "test/truthTableTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "test/powerSetTest.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "test/spaceFillingCurveTest.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

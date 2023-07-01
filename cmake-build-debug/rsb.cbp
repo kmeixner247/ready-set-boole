@@ -455,6 +455,12 @@
 		<Unit filename="/Users/kmeixner/Documents/rsv/test/negationNormalFormTest.cpp">
 			<Option target="rsbTest"/>
 		</Unit>
+		<Unit filename="/Users/kmeixner/Documents/rsv/test/powerSetTest.cpp">
+			<Option target="rsbTest"/>
+		</Unit>
+		<Unit filename="/Users/kmeixner/Documents/rsv/test/spaceFillingCurveTest.cpp">
+			<Option target="rsbTest"/>
+		</Unit>
 		<Unit filename="/Users/kmeixner/Documents/rsv/test/truthTableTest.cpp">
 			<Option target="rsbTest"/>
 		</Unit>
