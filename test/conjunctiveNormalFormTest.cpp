@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "../rsb.hpp"
 
-void testCNF(std::string formula) {
+void testCNF(const std::string& formula) {
     std::string s1 = get_truth_table(formula);
     std::string s2 = get_truth_table(conjunctive_normal_form(formula));
     EXPECT_EQ(s1, s2);
