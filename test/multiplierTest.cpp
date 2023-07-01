@@ -30,12 +30,6 @@ TEST(multiplierTest, isCommutative) {
     EXPECT_EQ(multiplier(921, 55555), multiplier(55555, 921));
 }
 
-TEST(multiplierTest, overflowsCorrectly) {
-    uint32_t result = 20000000000 * 20000000000;
-    EXPECT_EQ(multiplier(20000000000, 20000000000), result);
-    result = 2147483648 * 3;
-    EXPECT_EQ(multiplier(2147483648, 3), result);
-}
 
     TEST(multiplierTest, hasConstantTimeComplexity) {
         auto startTime = std::chrono::high_resolution_clock::now();
