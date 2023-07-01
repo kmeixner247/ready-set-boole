@@ -50,15 +50,15 @@ void assertThatFormulaIsValid(String const &formula) {
             case '=':
             case '>':
                 if (depth < 2)
-                    throw std::runtime_error("Invalid formula: Encountered unexpected operator '" + std::to_string(symbol) + "'");
+                    throw std::runtime_error("Invalid formula: Encountered unexpected operator '" + String(1,symbol) + "'");
                 depth--;
                 break;
             case '!':
                 if (depth == 0)
-                    throw std::runtime_error("Invalid formula: Encountered unexpected operator '" + std::to_string(symbol) + "'");
+                    throw std::runtime_error("Invalid formula: Encountered unexpected operator '" + String(1,symbol) + "'");
                 break;
             default:
-                throw std::runtime_error("Invalid formula: Encountered unexpected symbol '" + std::to_string(symbol) + "'");
+                throw std::runtime_error("Invalid formula: Encountered unexpected symbol '" + String(1,symbol) + "'");
         }
     }
     if (depth > 1)
