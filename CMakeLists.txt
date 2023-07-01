@@ -13,7 +13,7 @@ set(Headers
 )
 set(Sources
     src/adder.cpp
-        src/multiplier.cpp src/grayCode.cpp src/evalFormula.cpp src/truthTable.cpp src/negationNormalForm.cpp src/conjunctiveNormalForm.cpp src/conjunctiveNormalForm.cpp src/truthTableString.cpp src/isSatisfiable.cpp src/powerSet.cpp src/Set.cpp src/Set.hpp src/evalSet.cpp src/spaceFillingCurve.cpp)
+        src/multiplier.cpp src/grayCode.cpp src/evalFormula.cpp src/truthTable.cpp src/negationNormalForm.cpp src/conjunctiveNormalForm.cpp src/conjunctiveNormalForm.cpp src/truthTableString.cpp src/isSatisfiable.cpp src/powerSet.cpp src/Set.cpp src/Set.hpp src/evalSet.cpp src/spaceFillingCurve.cpp src/utils.cpp)
 
 add_library(rsb STATIC ${Sources} ${Headers})
 

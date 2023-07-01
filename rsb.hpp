@@ -1,6 +1,10 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
+
+typedef std::string String;
+typedef std::vector<std::string> StringVector;
 
 uint32_t adder(uint32_t a, uint32_t b);
 uint32_t multiplier(uint32_t a, uint32_t b);
@@ -14,3 +18,5 @@ std::vector<std::vector<int> > powerset(std::vector<int> const &set);
 std::vector<int32_t> eval_set(std::string const &formula, const std::vector<std::vector<int32_t> >& sets);
 
 std::string get_truth_table(std::string str);
+void assertThatFormulaIsValid(String const &formula);
+bool isAndOrOr(char const &c);

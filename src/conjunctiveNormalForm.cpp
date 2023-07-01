@@ -25,61 +25,25 @@ String conjunctive_normal_form(String const &formula) {
         newFormula = associativity(operand1, operand2, op3);
     else if (!isAndOrOr(op1) && op2 == '&' && op3 == '|')
         newFormula = distributivity(operand1, operand2, op3);
-    else if(op1 == '&' && !isAndOrOr(op2) && op3 == '&')
+    else if (op1 == '&' && !isAndOrOr(op2) && op3 == '&')
         newFormula = commutativity(operand1, operand2, op3);
-    else if(op1 == '&' && !isAndOrOr(op2) && op3 == '|')
+    else if (op1 == '&' && !isAndOrOr(op2) && op3 == '|')
         newFormula = distributivity(operand1, operand2, op3);
-    else if(op1 == '&' && op2 == '&' && op3 == '|')
+    else if (op1 == '&' && op2 == '&' && op3 == '|')
         newFormula = factorise(operand1, operand2, op3);
-    else if(op1 == '&' && op2 == '|' && op3 == '&')
+    else if (op1 == '&' && op2 == '|' && op3 == '&')
         newFormula = commutativity(operand1, operand2, op3);
-    else if(op1 == '&' && op2 == '|' && op3 == '|')
+    else if (op1 == '&' && op2 == '|' && op3 == '|')
         newFormula = distributivity(operand1, operand2, op3);
-    else if(op1 == '|' && !isAndOrOr(op2) && op3 == '&')
+    else if (op1 == '|' && !isAndOrOr(op2) && op3 == '&')
         newFormula = commutativity(operand1, operand2, op3);
-    else if(op1 == '|' && !isAndOrOr(op2) && op3 == '|')
+    else if (op1 == '|' && !isAndOrOr(op2) && op3 == '|')
         newFormula = commutativity(operand1, operand2, op3);
-    else if(op1 == '|' && op2 == '&' && op3 == '|')
+    else if (op1 == '|' && op2 == '&' && op3 == '|')
         newFormula = distributivity(operand1, operand2, op3);
-    else if(op1 == '|' && op2 == '|' && op3 == '|')
+    else if (op1 == '|' && op2 == '|' && op3 == '|')
         newFormula = associativity(operand1, operand2, op3);
     return newFormula;
-}
-
-StringVector extractOperands(String const &formula) {
-
-    StringVector operands;
-    String temp;
-    for (auto c : formula.substr(0, formula.size() - 1)) {
-        switch (c) {
-            case 'A' ... 'Z':
-                operands.push_back(String() + c);
-                break;
-            case '!':
-                operands.back() += '!';
-                break;
-            case '|':
-            case '&':
-            case '>':
-            case '=':
-            case '^':
-                temp = operands.back();
-                operands.pop_back();
-                operands.back() += temp + c;
-                break;
-            default:
-                throw std::runtime_error(String("invalid symbol in formula: ") + c);
-        }
-    }
-    return operands;
-}
-
-bool isAndOrOr(char const &c) {
-    String operators("&|");
-    if (operators.find(c) == std::string::npos)
-        return false;
-    else
-        return true;
 }
 
 String commutativity(String const &operand1, String const &operand2, char const &op) {

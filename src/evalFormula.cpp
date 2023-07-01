@@ -1,10 +1,9 @@
 #include <string>
 #include <stack>
-#include <iostream>
 #include "../rsb.hpp"
 
 void handle_operator(std::stack<bool> &truthStack, const char op) {
-    if (truthStack.size() < 1)
+    if (truthStack.empty())
         throw std::runtime_error("Invalid formula: Too many operators");
     bool b = truthStack.top();
     truthStack.pop();
@@ -12,7 +11,7 @@ void handle_operator(std::stack<bool> &truthStack, const char op) {
         truthStack.push(!b);
         return;
     }
-    if (truthStack.size() < 1)
+    if (truthStack.empty())
         throw std::runtime_error("Invalid formula: Too many operators");
     bool a = truthStack.top();
     truthStack.pop();
@@ -32,13 +31,14 @@ void handle_operator(std::stack<bool> &truthStack, const char op) {
         case '=':
             truthStack.push(a == b);
             break;
+        default:
+            throw std::runtime_error("Invalid character in formula");
     }
 }
 
 bool eval_formula(std::string &formula) {
-    if (formula.empty()) {
+    if (formula.empty())
         throw std::runtime_error("Empty String can't be evaluated");
-    }
     std::stack<bool> truthStack;
     for (std::string::const_iterator it = formula.begin(); it != formula.end(); it++) {
         switch(*it) {

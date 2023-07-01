@@ -15,8 +15,7 @@ IntVector getPermutation(int32_t i, IntVector const &set) {
 
 IntVectorVector powerset(IntVector const &set) {
     IntVectorVector ivv;
-    int32_t powerSetSize = pow(2, set.size());
-
+    int32_t powerSetSize =  1 << set.size();
     for (int32_t i = 0; i < powerSetSize; i ++) {
         ivv.push_back(getPermutation(i, set));
     }
