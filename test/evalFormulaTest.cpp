@@ -2,7 +2,7 @@
 #include "../rsb.hpp"
 
 TEST(evalFormulaTest, failsOnEmptyString) {
-    std::string formula = "";
+    std::string formula;
     EXPECT_THROW(eval_formula(formula), std::runtime_error);
 }
 

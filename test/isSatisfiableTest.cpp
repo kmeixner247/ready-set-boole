@@ -6,7 +6,7 @@ TEST(isSatisfiableTest, exists) {
     EXPECT_NO_THROW(sat(formula));
 }
 
-TEST(isSatisfiableTest, asdf) {
+TEST(isSatisfiableTest, handlesSimpleFormula) {
     EXPECT_TRUE(sat("AB|"));
     EXPECT_TRUE(sat("AB&"));
     EXPECT_FALSE(sat("AA!&"));

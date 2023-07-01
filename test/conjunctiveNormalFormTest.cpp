@@ -35,3 +35,7 @@ TEST(conjunctiveNormalFormTest, applesAssociativity) {
 TEST(conjunctiveNormalFormTest, appliesDistributivity) {
     testCNF("ABC&|");
 }
+
+TEST(conjunctiveNormalFormTest, handlesComplexFormula) {
+    testCNF("AB|!C&!D!!E|!!!=F>AA==F=K>");
+}

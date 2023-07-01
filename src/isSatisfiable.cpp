@@ -4,7 +4,7 @@
 
 bool evaluatePermutation(std::map<char, bool> &hashMap, std::string formula) {
     for (auto el : hashMap) {
-        const char replaceValue = el.second ? 1 : 0;
+        const char replaceValue = el.second ? '1' : '0';
         std::replace(formula.begin(), formula.end(), el.first, replaceValue);
     }
     return eval_formula(formula);
