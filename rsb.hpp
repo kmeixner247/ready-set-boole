@@ -18,6 +18,8 @@ std::string conjunctive_normal_form(std::string const &formula);
 bool sat(std::string const &formula);
 std::vector<std::vector<int> > powerset(std::vector<int> const &set);
 std::vector<int32_t> eval_set(std::string const &formula, const std::vector<std::vector<int32_t> >& sets);
+double map(uint16_t x, uint16_t y);
+std::pair<uint16_t, uint16_t> reverse_map(double n);
 
 std::string get_truth_table(const std::string& str);
 void assertThatFormulaIsValid(String const &formula);
