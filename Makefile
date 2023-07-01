@@ -25,4 +25,8 @@ clean:
 
 re: clean all
 
+init:
+	git submodule init
+	git submodule update
+
 .PHONY: all test clean re
