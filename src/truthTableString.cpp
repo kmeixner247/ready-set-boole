@@ -4,7 +4,7 @@
 #include <algorithm>
 #include "../rsb.hpp"
 
-void print_header(std::map<char, bool> &hashMap, std::string &result) {
+void getHeader(std::map<char, bool> &hashMap, std::string &result) {
     std::string line = "|";
     std::string line2 = "|---";
     for (auto el : hashMap) {
@@ -17,32 +17,29 @@ void print_header(std::map<char, bool> &hashMap, std::string &result) {
     result += line2 + "|\n";
 }
 
-void print_map(std::map<char, bool> &hashMap, std::string formula, std::string &result) {
+void getMap(std::map<char, bool> const &hashMap, std::string formula, std::string &result) {
     result += "|";
     for (auto el : hashMap) {
         result += " " + std::to_string(el.second) + " |";
-        const char test = el.second + 48;
+        const char test = el.second ? '1' : '0';
         std::replace(formula.begin(), formula.end(), el.first, test);
     }
     result += " " + std::to_string(eval_formula(formula)) + " |\n";
 }
 
-std::string get_truth_table(std::string str) {
+std::string get_truth_table(const std::string& str) {
     std::map<char, bool> hashMap;
     for (auto symbol : str) {
-        switch (symbol) {
-            case 'A' ... 'Z':
-                hashMap[symbol] = false;
-                break ;
-        }
+        if (symbol >= 'A' && symbol <= 'Z')
+            hashMap[symbol] = false;
     }
     if (hashMap.empty())
         return "";
     std::string result;
-    print_header(hashMap, result);
+    getHeader(hashMap, result);
     auto it = hashMap.rbegin();
     while (true) {
-        print_map(hashMap, str, result);
+        getMap(hashMap, str, result);
         while (it->second && it != hashMap.rend()) {
             it++;
         }
@@ -50,8 +47,7 @@ std::string get_truth_table(std::string str) {
             break;
         it->second = true;
         while (it != hashMap.rbegin()) {
-            it--;
-            it->second = false;
+            (--it)->second = false;
         }
     }
     return result;
