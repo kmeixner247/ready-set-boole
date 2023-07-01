@@ -6,9 +6,6 @@ void testCNF(const std::string& formula) {
     std::string s2 = get_truth_table(conjunctive_normal_form(formula));
     EXPECT_EQ(s1, s2);
 }
-TEST(conjunctiveNormalFormTest, exists) {
-    EXPECT_NO_THROW(conjunctive_normal_form(""));
-}
 
 TEST(conjunctiveNormalFormTest, handlesBasicInput) {
     testCNF("");

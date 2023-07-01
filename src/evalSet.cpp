@@ -3,9 +3,7 @@
 #include <vector>
 #include <string>
 #include <map>
-typedef std::string String;
-typedef std::vector<int32_t> IntVector;
-typedef std::vector<IntVector> IntVectorVector;
+
 typedef std::map<char, Set> CharSetMap;
 
 IntVector eval_set(String const &formula, const IntVectorVector& sets) {

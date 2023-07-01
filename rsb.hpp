@@ -5,6 +5,8 @@
 
 typedef std::string String;
 typedef std::vector<std::string> StringVector;
+typedef std::vector<int32_t> IntVector;
+typedef std::vector<IntVector> IntVectorVector;
 
 uint32_t adder(uint32_t a, uint32_t b);
 uint32_t multiplier(uint32_t a, uint32_t b);

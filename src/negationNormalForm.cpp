@@ -2,9 +2,6 @@
 #include <vector>
 #include "../rsb.hpp"
 
-typedef std::string String;
-typedef std::vector<String> StringVector;
-
 StringVector extractOperands(String const &formula);
 String eliminateDoubleNegation(String const &formula);
 String transformMaterialCondition(String const &formula);

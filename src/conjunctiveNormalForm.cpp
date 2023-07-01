@@ -1,14 +1,12 @@
 #include <string>
 #include <vector>
 #include "../rsb.hpp"
-typedef std::string String;
-typedef std::vector<String> StringVector;
+
 bool isAndOrOr(char const &c);
 String commutativity(String const &operand1, String const &operand2, char const &op);
 String associativity(String operand1, String operand2, char const &op);
 String distributivity(String const &operand1, String const &operand2, char const &op);
 String factorise(String const &operand1, String const &operand2, char const &op);
-
 StringVector extractOperands(String const &formula);
 
 String conjunctive_normal_form(String const &formula) {
