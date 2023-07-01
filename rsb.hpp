@@ -17,7 +17,7 @@ void print_truth_table(String &str);
 String negation_normal_form(String const &formula);
 String conjunctive_normal_form(String const &formula);
 bool sat(String const &formula);
-IntVector powerset(IntVector const &set);
+IntVectorVector powerset(IntVector const &set);
 IntVector eval_set(String const &formula, const IntVectorVector &sets);
 double map(uint16_t x, uint16_t y);
 ShortPair reverse_map(double n);
