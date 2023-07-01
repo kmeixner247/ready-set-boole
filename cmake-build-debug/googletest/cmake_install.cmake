@@ -1,4 +1,4 @@
-# Install script for directory: /Users/kmeixner/Documents/rsb/googletest
+# Install script for directory: /Users/kmeixner/Documents/rsv/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/kmeixner/Documents/rsb/cmake-build-debug/googletest/googlemock/cmake_install.cmake")
+  include("/Users/kmeixner/Documents/rsv/cmake-build-debug/googletest/googlemock/cmake_install.cmake")
 
 endif()
 

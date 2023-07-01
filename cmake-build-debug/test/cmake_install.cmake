@@ -1,4 +1,4 @@
-# Install script for directory: /Users/kmeixner/Documents/rsb/test
+# Install script for directory: /Users/kmeixner/Documents/rsv/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

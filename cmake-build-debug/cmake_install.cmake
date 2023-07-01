@@ -1,4 +1,4 @@
-# Install script for directory: /Users/kmeixner/Documents/rsb
+# Install script for directory: /Users/kmeixner/Documents/rsv
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,12 +39,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/kmeixner/Documents/rsb/cmake-build-debug/googletest/cmake_install.cmake")
+  include("/Users/kmeixner/Documents/rsv/cmake-build-debug/googletest/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/kmeixner/Documents/rsb/cmake-build-debug/test/cmake_install.cmake")
+  include("/Users/kmeixner/Documents/rsv/cmake-build-debug/test/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/kmeixner/Documents/rsb/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/kmeixner/Documents/rsv/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
