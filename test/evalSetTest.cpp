@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 #include "../rsb.hpp"
 #include "../src/Set.hpp"
-#include <vector>
 
 void testEvalSet(const String& formula, const IntVectorVector& sets, const IntVector& expectedSet) {
     EXPECT_EQ(Set(eval_set(formula, sets)), Set(expectedSet));
